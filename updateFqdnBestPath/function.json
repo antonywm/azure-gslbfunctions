@@ -1,0 +1,58 @@
+﻿{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "Request",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    },
+    {
+      "connection": "AzureWebJobsStorage",
+      "name": "fqdnDataFile",
+      "tableName": "gslbData",
+      "take": 50,
+      "direction": "in",
+      "type": "table"
+    },
+    {
+      "name": "bestAppTable",
+      "direction": "in",
+      "type": "table",
+      "connection": "AzureWebJobsStorage",
+      "tableName": "bestAppTable",
+      "take": 50
+    },
+    {
+      "name": "outputQueueItem",
+      "direction": "out",
+      "type": "queue",
+      "connection": "AzureWebJobsStorage",
+      "queueName": "dns-change-request"
+    },
+    {
+      "name": "poolDataFile",
+      "direction": "in",
+      "type": "table",
+      "connection": "AzureWebJobsStorage",
+      "tableName": "poolData",
+      "take": 50
+    },
+    {
+      "name": "stateTable",
+      "direction": "in",
+      "type": "table",
+      "connection": "AzureWebJobsStorage",
+      "tableName": "stateTable",
+      "take": 50
+    }
+  ]
+}

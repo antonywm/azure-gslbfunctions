@@ -1,0 +1,35 @@
+﻿{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "Request",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    },
+    {
+      "name": "gslbTable",
+      "direction": "in",
+      "type": "table",
+      "connection": "AzureWebJobsStorage",
+      "tableName": "gslbData",
+      "take": 50
+    },
+    {
+      "name": "poolTable",
+      "direction": "in",
+      "type": "table",
+      "connection": "AzureWebJobsStorage",
+      "tableName": "poolData",
+      "take": 50
+    }
+  ]
+}
